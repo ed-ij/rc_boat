@@ -10,5 +10,5 @@ while True:
 #    process.stdin.write(str(thrust)+"\n")
     process.stdin.write(line)
         print line + "bytes written"
-#    for line in iter(.stdout.readline, ''):
-#        print line,
+#    for output in iter(process.stdout.readline, ''):
+#        print output,
