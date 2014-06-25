@@ -7,7 +7,7 @@
 #include <string.h>
 #include <pigpio.h>
 
-/*void mygpioSetup() {
+void mygpioSetup() {
     if (gpioGetMode(18) != PI_OUTPUT) {
         (gpioSetMode(18, PI_OUTPUT));
     }
@@ -27,7 +27,6 @@
         (gpioSetPWMfrequency(17, 8000));
    }
 }
-*/
 
 void value_reconfig(int rudder) {
     if (rudder > 2000) {
@@ -39,8 +38,8 @@ int main(int argc, char const* argv[]) {
     char input[7];
     int thrust;
     int rudder;
-//    gpioInitialise();
-//    mygpioSetup();
+    gpioInitialise();
+    mygpioSetup();
 //    while (1) {
     while (fgets(input, sizeof(input), stdin) != NULL) {
 //        fgets(input, sizeof(input), stdin);
@@ -74,6 +73,6 @@ int main(int argc, char const* argv[]) {
 //        prinf("%d = rudder, %d + thrust", rudder, thrust);
 //        fflush(stdout);    
    }
-//    gpioTerminate();
+    gpioTerminate();
     return 0;
 }
