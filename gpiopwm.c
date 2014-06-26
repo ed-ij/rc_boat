@@ -7,6 +7,15 @@
 #include <string.h>
 #include <pigpio.h>
 
+/*struct gpiovalues {
+        int pin;     // Which pin to use
+        int range;   // PWM range of pin
+        int freq;    // PWM frequency
+        int neutral; // Neutral position
+        int pwm;     // Current pwm setting
+        int change;  // Value to change pwm by
+}; */
+
 void mygpioSetup() {
     if (gpioGetMode(18) != PI_OUTPUT) {
         (gpioSetMode(18, PI_OUTPUT));
